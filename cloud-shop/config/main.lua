@@ -270,7 +270,7 @@ return {
 					},
 				},
 				License = {
-					required = true,
+					required = false,
 					buyDialog = true,
 					label = "Weapon License",
 					type = "weapon",
