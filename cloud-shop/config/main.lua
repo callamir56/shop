@@ -335,5 +335,105 @@ return {
 				},
 			},
 		},
+
+		["digital_shop"] = {
+			Locations = {
+				vec4(-656.9, -857.5, 24.49, 0.0), -- Little Seoul Digital Den
+				vec4(392.4, -831.7, 29.29, 230.0), -- Vinewood Digital Shop
+			},
+
+			Categories = {
+				{ name = "Phones", type = "phones", icon = "mdi:cellphone" },
+				{ name = "Electronics", type = "electronics", icon = "mdi:laptop" },
+				{ name = "Accessories", type = "accessories", icon = "mdi:headphones" },
+			},
+
+			Items = {
+				-- Phones
+				{ name = "phone", label = "Smartphone", category = "phones", price = 650 },
+				{ name = "simcard", label = "SIM Card", category = "phones", price = 50 },
+
+				-- Electronics
+				{ name = "radio", label = "Radio", category = "electronics", price = 350 },
+				{ name = "laptop", label = "Laptop", category = "electronics", price = 1500 },
+				{ name = "tablet", label = "Tablet", category = "electronics", price = 900 },
+				{ name = "camera", label = "Camera", category = "electronics", price = 750 },
+
+				-- Accessories
+				{ name = "powerbank", label = "Power Bank", category = "accessories", price = 120 },
+				{ name = "headphones", label = "Headphones", category = "accessories", price = 200 },
+			},
+
+			Requirement = {
+				Job = {
+					required = false,
+					jobs = {},
+				},
+				License = {
+					required = false,
+					buyDialog = false,
+					label = "None",
+					type = "none",
+					price = 0,
+				},
+			},
+
+			Locales = {
+				MainHeader = {
+					title = "Digital Shop",
+					tag = "24/7",
+					description = "Welcome to your local digital shop! Find the latest smartphones, laptops, radios, and accessories.",
+				},
+				CartHeader = {
+					title = "Shopping",
+					tag = "Cart",
+					description = "Review your selected digital items and complete your purchase.",
+				},
+			},
+
+			Blip = {
+				enabled = true,
+				name = "Digital Shop [24/7]",
+				sprite = 521,
+				color = 3,
+				scale = 0.8,
+			},
+
+			Indicator = {
+				Ped = {
+					enabled = true,
+					model = `ig_lifeinvad_01`,
+					scenario = "WORLD_HUMAN_STAND_MOBILE",
+				},
+				Marker = {
+					enabled = false,
+					type = 20,
+					size = vec3(0.7, 0.7, 0.7),
+					color = { 20, 184, 166, 120 },
+					bobUpAndDown = false,
+					faceCamera = false,
+					rotate = true,
+				},
+			},
+
+			Interaction = {
+				OpenKey = 38,
+
+				HelpText = {
+					enabled = false,
+					distance = 2.5,
+				},
+				FloatingText = {
+					enabled = true,
+					distance = 2.5,
+				},
+				Target = {
+					enabled = false,
+					boxZoneSize = vec3(4, 4, 4),
+					drawSprite = true,
+					distance = 2.5,
+				},
+			},
+		},
 	},
 }
