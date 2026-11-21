@@ -9,5 +9,16 @@
   </head>
   <body>
     <div id="app"></div>
-  </body>
+  <script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.action === 'playCustomVoice' && e.data.file) {
+    try {
+      const audio = new Audio('./' + encodeURI(e.data.file));
+      audio.volume = 0.8;
+      audio.play().catch(() => {});
+    } catch (err) {}
+  }
+});
+</script>
+</body>
 </html>
