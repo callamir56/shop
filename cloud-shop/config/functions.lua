@@ -14,28 +14,14 @@ end
 --- Sends a notification to the client
 --- @param data {title: string, description: string, type: string}
 local function clientNotify(data)
-	lib.notify({
-		title = data.title,
-		description = data.description,
-		type = data.type,
-		duration = 5000,
-		position = "top",
-		style = { backgroundColor = "#1E1E1E" },
-	})
+	TriggerEvent("esx:showNotification", data.description or data.title)
 end
 
 --- Sends a notification from the server to a specific client
 --- @param source number -- Player source ID
 --- @param data {title: string, description: string, type: string}
 local function serverNotify(source, data)
-	TriggerClientEvent("ox_lib:notify", source, {
-		title = data.title,
-		description = data.description,
-		type = data.type,
-		duration = 5000,
-		position = "top",
-		style = { backgroundColor = "#1E1E1E" },
-	})
+	TriggerClientEvent("esx:showNotification", source, data.description or data.title)
 end
 
 --- Displays a help text

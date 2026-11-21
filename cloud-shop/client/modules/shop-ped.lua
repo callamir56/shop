@@ -80,14 +80,7 @@ end
 ---@param speechName string
 ---@param speechParam string
 local function applySpeechToPed(speechName, speechParam)
-	local shopPed = getNearestPed()
-	if not shopPed then
-		log.error("[applySpeechToPed] No valid ped found within 15.0 units to apply speech.")
-		return
-	end
-
-	if IsAmbientSpeechPlaying(shopPed) then StopCurrentPlayingAmbientSpeech(shopPed) end
-	PlayPedAmbientSpeechNative(shopPed, speechName, speechParam)
+	return
 end
 
 return {
