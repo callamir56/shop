@@ -13,7 +13,7 @@ local function openShopUI(shopKey)
 	SetNuiFocus(true, true)
 	SendNUIMessage({ action = "toggleShop", showShop = true })
 	if shopKey == "shop" then
-		SendNUIMessage({ action = "playCustomVoice", file = "sounds/super1.mp4" })
+		SendNUIMessage({ action = "playCustomVoice", file = "sounds/super1.m4a" })
 	end
 
 	while IsScreenblurFadeRunning() do
