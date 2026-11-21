@@ -337,6 +337,7 @@ return {
 		},
 
 		["digital_shop"] = {
+			PointRadius = 25.0,
 			Locations = {
 				vec4(-1339.87, -401.85, 36.37, 314.01),
 				vec4(-656.9, -857.5, 24.49, 0.0), -- Little Seoul Digital Den
