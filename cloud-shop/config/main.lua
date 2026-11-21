@@ -338,6 +338,7 @@ return {
 
 		["digital_shop"] = {
 			Locations = {
+				vec4(-1339.87, -401.85, 36.37, 314.01),
 				vec4(-656.9, -857.5, 24.49, 0.0), -- Little Seoul Digital Den
 				vec4(392.4, -831.7, 29.29, 230.0), -- Vinewood Digital Shop
 			},
