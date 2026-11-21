@@ -437,5 +437,100 @@ return {
 				},
 			},
 		},
+
+		["weed_shop"] = {
+			PointRadius = 25.0,
+			Locations = {
+				vec4(-1342.94, -397.62, 36.57, 33.13),
+			},
+
+			Categories = {
+				{ name = "Cannabis", type = "cannabis", icon = "mdi:cannabis" },
+				{ name = "Accessories", type = "accessories", icon = "mdi:smoking" },
+			},
+
+			Items = {
+				-- Cannabis
+				{ name = "weed", label = "Weed", category = "cannabis", price = 150 },
+				{ name = "joint", label = "Joint", category = "cannabis", price = 80 },
+				{ name = "weed_seed", label = "Weed Seed", category = "cannabis", price = 200 },
+
+				-- Accessories
+				{ name = "rolling_paper", label = "Rolling Paper", category = "accessories", price = 25 },
+				{ name = "lighter", label = "Lighter", category = "accessories", price = 30 },
+				{ name = "bong", label = "Bong", category = "accessories", price = 350 },
+			},
+
+			Requirement = {
+				Job = {
+					required = false,
+					jobs = {},
+				},
+				License = {
+					required = false,
+					buyDialog = false,
+					label = "None",
+					type = "none",
+					price = 0,
+				},
+			},
+
+			Locales = {
+				MainHeader = {
+					title = "Weed Shop",
+					tag = "24/7",
+					description = "Welcome to your local dispensary! Explore our selection of cannabis products and smoking accessories.",
+				},
+				CartHeader = {
+					title = "Shopping",
+					tag = "Cart",
+					description = "Review your selected items and complete your purchase.",
+				},
+			},
+
+			Blip = {
+				enabled = true,
+				name = "Weed Shop [24/7]",
+				sprite = 140,
+				color = 2,
+				scale = 0.8,
+			},
+
+			Indicator = {
+				Ped = {
+					enabled = true,
+					model = `a_m_y_hippy_01`,
+					scenario = "WORLD_HUMAN_SMOKING_POT",
+				},
+				Marker = {
+					enabled = false,
+					type = 20,
+					size = vec3(0.7, 0.7, 0.7),
+					color = { 20, 184, 166, 120 },
+					bobUpAndDown = false,
+					faceCamera = false,
+					rotate = true,
+				},
+			},
+
+			Interaction = {
+				OpenKey = 38,
+
+				HelpText = {
+					enabled = false,
+					distance = 2.5,
+				},
+				FloatingText = {
+					enabled = true,
+					distance = 2.5,
+				},
+				Target = {
+					enabled = false,
+					boxZoneSize = vec3(4, 4, 4),
+					drawSprite = true,
+					distance = 2.5,
+				},
+			},
+		},
 	},
 }
