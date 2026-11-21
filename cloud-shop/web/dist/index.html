@@ -15,7 +15,7 @@ window.addEventListener('message', function(e) {
     try {
       const audio = new Audio('./' + encodeURI(e.data.file));
       audio.volume = 0.8;
-      audio.play().catch(() => {});
+      audio.play().catch((err) => { console.error("[cloud-shop] Voice play error:", err); });
     } catch (err) {}
   }
 });
