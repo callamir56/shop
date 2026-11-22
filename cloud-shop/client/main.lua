@@ -95,7 +95,11 @@ RegisterNUICallback("shop:callback", function(data, cb)
 			log.debug(("[NUI:payItems] Payment Type: %s | Cart Array: %s"):format(data.type, json.encode(data.cart)))
 
 			local success = handleTransaction(data.type, data.cart)
-			if success then ShopPeds.ApplySpeech("Generic_Thanks", "Speech_Params_Force_Shouted_Critical") end
+			if success then
+				ShopPeds.ApplySpeech("Generic_Thanks", "Speech_Params_Force_Shouted_Critical")
+				local purchaseVoices = { "sounds/kharidsuper2.m4a", "sounds/kharidsuper3.m4a" }
+				SendNUIMessage({ action = "playCustomVoice", file = purchaseVoices[math.random(#purchaseVoices)] })
+			end
 			cb(success)
 		end,
 

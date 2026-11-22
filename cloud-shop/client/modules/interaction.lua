@@ -22,16 +22,32 @@ local shopVoices = {
 	},
 }
 
+local lastOpenTime = 0
+local openCount = 0
+
 ---@param shopKey string
 local function openShopUI(shopKey)
 	Functions.ToggleHud(false)
 
 	SetNuiFocus(true, true)
 	SendNUIMessage({ action = "toggleShop", showShop = true })
-	local voices = shopVoices[shopKey]
-	if voices and #voices > 0 then
-		local selectedVoice = voices[math.random(#voices)]
-		SendNUIMessage({ action = "playCustomVoice", file = selectedVoice })
+
+	local now = GetGameTimer()
+	if (now - lastOpenTime) <= 20000 then
+		openCount = openCount + 1
+	else
+		openCount = 1
+	end
+	lastOpenTime = now
+
+	if openCount >= 2 then
+		SendNUIMessage({ action = "playCustomVoice", file = "sounds/kharidsuper1.m4a" })
+	else
+		local voices = shopVoices[shopKey]
+		if voices and #voices > 0 then
+			local selectedVoice = voices[math.random(#voices)]
+			SendNUIMessage({ action = "playCustomVoice", file = selectedVoice })
+		end
 	end
 
 	while IsScreenblurFadeRunning() do
