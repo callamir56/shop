@@ -119,6 +119,16 @@ return {
 				Ped = {
 					enabled = true, -- If true, spawns a ped (NPC) at the locations
 					model = `mp_m_shopkeep_01`, -- Ped model type --? Reference: https://docs.fivem.net/docs/game-references/ped-models
+					models = {
+						{ model = `a_f_y_bevhills_01`, gender = "female" },
+						{ model = `a_f_y_hipster_02`, gender = "female" },
+						{ model = `a_f_y_business_01`, gender = "female" },
+						{ model = `a_f_m_bevhills_01`, gender = "female" },
+						{ model = `mp_m_shopkeep_01`, gender = "male" },
+						{ model = `a_m_y_hipster_01`, gender = "male" },
+						{ model = `a_m_m_business_01`, gender = "male" },
+						{ model = `s_m_y_shop_mask`, gender = "male" },
+					},
 					scenario = "WORLD_HUMAN_AA_SMOKE", -- Animation scenario for the ped --? Reference: https://github.com/DioneB/gtav-scenarios
 				},
 				Marker = {
